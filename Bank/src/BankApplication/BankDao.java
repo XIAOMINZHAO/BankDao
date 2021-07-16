@@ -96,6 +96,21 @@ public class BankDao implements BankDaoInterface{
 		
 	}
 
+	@Override
+	public void deleteUser(Long accountnumber) {
+		
+		// TODO Auto-generated method stub
+		
+		for(BankAccount b : customerMap.values()) {
+			if(b.getAccountNumber() == accountnumber ) {
+				customerMap.remove(b.getCustomerName());
+			}
+		}
+		
+		System.out.println("The account of " + accountnumber + " has been deleted.");
+		
+	}
+
 
 
 }

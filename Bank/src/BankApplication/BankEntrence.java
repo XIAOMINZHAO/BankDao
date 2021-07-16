@@ -23,6 +23,7 @@ public class BankEntrence {
 				+ "8 -- display account balance\n "
 				+ "9 -- display all users\n "
 				+ "10 -- withdraw money\n "
+				+ "11 -- delete a user by account number\n "
 				+ "100 -- exit program");
 		
 		while(option != 100) { 
@@ -107,6 +108,12 @@ public class BankEntrence {
 					System.out.println("How much do you want to withdraw? ");
 					int amount1 = Integer.parseInt(scan.nextLine());
 					bankDao.withdraw(username7, amount1);
+					break;
+					
+				case 11: //delete user
+					System.out.println("please enter the account number that you want to delete");
+					long accountNum = Long.parseLong(scan.nextLine());
+					bankDao.deleteUser(accountNum);
 					break;
 					
 				case 100:

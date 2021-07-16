@@ -14,6 +14,7 @@ public interface BankDaoInterface {
 	public void deposit(String username, int amount);
 	public void withdraw(String username, int amount);
 	public void getBalance(String name);
+	public void deleteUser(Long accountnumber);
 	
 	
 	
