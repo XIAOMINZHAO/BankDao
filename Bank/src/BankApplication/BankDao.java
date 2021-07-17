@@ -29,6 +29,7 @@ public class BankDao implements BankDaoInterface{
 		BankAccount a = customerMap.get(username);
 		
 		a.setCustomerName(newName);
+		customerMap.remove(username);
 		customerMap.put(newName,a);
 		
 		

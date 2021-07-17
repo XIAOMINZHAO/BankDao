@@ -1,5 +1,7 @@
 package BankApplication;
 
+import java.util.Random;
+
 public class BankAccount {
 
 	long accountNumber;
@@ -40,13 +42,17 @@ public class BankAccount {
 	}
 
 	public long getAccountNumber() {
-		System.out.println("Account number : " + this.accountNumber);
+//		System.out.println("Account number : " + this.accountNumber);
 		return accountNumber;
 	}
 
 	public long setAccountNumber() {
+		Random rand = new Random(); //instance of random class
+	      int upperbound = 10000;
+	        //generate random values from 0-24
+	      int int_random = rand.nextInt(upperbound);
 		long hash = ((this.phoneNumber.hashCode() & 0xffffffffL) << 14L) 
-		          ^ (this.phoneNumber.hashCode() & 0xffffffffL);
+		          ^ (this.email.hashCode() & 0xffffffffL) + int_random;
 		
 		this.accountNumber = hash;
 		System.out.println("Account number set to " + hash);
